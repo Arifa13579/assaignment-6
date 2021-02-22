@@ -21,9 +21,9 @@ const showImages = (images) => {
     errorMessage.style.display = 'block';
     // show error message
     if (searchInput.value === '') {
-      errorMessage.innerHTML = `<h1 class="text-center text-danger mt-4">The search box cannot be empty</h1>`;
+      errorMessage.innerHTML = `<h1 class="text-center text-danger mt-4">what are you searching for?</h1>`;
     } else {
-      errorMessage.innerHTML = `<h1 class="text-center text-danger mt-4">This item does not exist</h1>`;
+      errorMessage.innerHTML = `<h1 class="text-center text-danger mt-4">not matched</h1>`;
     }
   } else {
     errorMessage.style.display = 'none';
@@ -43,9 +43,9 @@ const showImages = (images) => {
   loadingSpinner(false);
 };
 
-// Search to hit Enter
-searchInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
+//  Enter
+searchInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
     searchBtn.click();
   }
 });
